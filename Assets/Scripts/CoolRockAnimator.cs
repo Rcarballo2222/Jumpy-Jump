@@ -9,6 +9,6 @@ public class CoolRockAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, (.05f * rotationSpeed), 0, Space.World);   
+        transform.Rotate(0, (.05f * rotationSpeed * Time.timeScale), 0, Space.World);   
     }
 }

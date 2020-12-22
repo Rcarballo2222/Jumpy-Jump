@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class ItemCollection : MonoBehaviour
 {
-    public GameObject ScoreBox;
     public AudioSource collectSound;
+    public GameObject collect_indicator;
 
     // Start is called before the first frame update
     void OnTriggerEnter() {
-        GlobalScores.num_collectibles += 1;
+        collect_indicator.SetActive(true);
         collectSound.Play();
         Destroy(gameObject);
     }

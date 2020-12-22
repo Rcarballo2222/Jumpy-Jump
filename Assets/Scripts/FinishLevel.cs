@@ -9,9 +9,15 @@ public class FinishLevel : MonoBehaviour
     public AudioSource levelComplete;
     public GameObject playerCamera;
     public GameObject winScreen;
+    public GameObject[] winBarriers;
+    public GameObject collectibleIndicator;
     
     private void OnTriggerEnter(){
+        for (int i=0; i < winBarriers.Length; i++){
+            winBarriers[i].SetActive(true);
+        }
         StartCoroutine(LevelWin());
+        RedirectLevels.Redirect(5);
     }
     
     IEnumerator LevelWin(){
@@ -20,6 +26,7 @@ public class FinishLevel : MonoBehaviour
         levelMusic.SetActive(false);
         levelComplete.Play();
         winScreen.SetActive(true);
+        collectibleIndicator.SetActive(false);
         yield return new WaitForSeconds(1);
     }
 }

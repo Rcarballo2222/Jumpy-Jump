@@ -25,7 +25,7 @@ public GameObject fadeOut;
         yield return new WaitForSeconds(2);
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(0);
+        RedirectLevels.Redirect(1);
         
     }
 
