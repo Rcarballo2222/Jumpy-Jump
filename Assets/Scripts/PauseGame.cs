@@ -40,6 +40,6 @@ public class PauseGame : MonoBehaviour
 
     public void RestartLevel(){
         UnPause();
-        RedirectLevels.Redirect(1);
+        RedirectLevels.Redirect(RedirectLevels.current_level);
     }
 }

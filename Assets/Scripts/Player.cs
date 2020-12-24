@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 			moveDirection.z = 0f;
 
 			moveDirection += transform.forward * Input.GetAxis("Vertical") * speed;
-			Debug.Log("" + moveDirection);
+			//Debug.Log("" + moveDirection);
 
 			if(isGrounded){
 				if(Input.GetAxis("Vertical") > 0){
